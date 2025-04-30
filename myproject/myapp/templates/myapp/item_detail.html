@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="detail-container">
+            <h1>{{ item.name }}</h1>
+            <p>{{ item.description }}</p>
+            <p class="created-at">Created at: {{ item.created_at }}</p>
+            <a href="{% url 'item_list' %}" class="back-link">Back to list</a>
+        </div>
+    </div>
+</body>
+</html> 

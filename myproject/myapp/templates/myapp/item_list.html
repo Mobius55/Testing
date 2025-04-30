@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Items</h1>
+        <ul class="item-list">
+            {% for item in items %}
+                <li class="item-card">
+                    <a href="{% url 'item_detail' item.id %}">{{ item.name }}</a>
+                    <p>{{ item.description }}</p>
+                </li>
+            {% empty %}
+                <li class="item-card">No items available.</li>
+            {% endfor %}
+        </ul>
+        
+        {% include 'myapp/snake_game.html' %}
+    </div>
+</body>
+</html> 
